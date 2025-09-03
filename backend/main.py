@@ -15,7 +15,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",  # For local development
         "https://rishav-agarwwal.github.io",  # Your GitHub Pages domain
-        "https://rishavagarwwal.pythonanywhere.com"  # Your backend domain
+        "https://ar-flo-backend.onrender.com"  # Your backend domain
     ],
     allow_credentials=True,
     allow_methods=["*"],
