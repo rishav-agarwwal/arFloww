@@ -75,7 +75,7 @@ def upload_to_postgres(df, table):
 # ---------- 3. SIMULATE PAYMENTS ----------
 def simulate_payments():
     conn = connect_db()
-    df = pd.read_sql("SELECT * FROM ar_invoices WHERE status = 1", conn)
+    df = pd.read_sql("SELECT * FROM ar_invoices WHERE status = 1 AND due_date <= current_date + 10", conn)
     conn.close()
     sample_n = random.randint(len(df)//5, len(df)//2)
     closed_df = df.sample(n=sample_n).copy()
